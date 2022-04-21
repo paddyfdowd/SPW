@@ -1,11 +1,3 @@
-function getForms(){
-
-    var uname = document.getElementById("signup_1").value;
-    alert(uname)
-
-}
-
-
 
 function phpSignup(){
     var uname = document.getElementById("signup_1").value;
