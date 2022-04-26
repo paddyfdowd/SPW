@@ -1,14 +1,11 @@
 <?php
+
+    include('config.php');
+
     $request = $_REQUEST; //a PHP Super Global variable which used to collect data after submitting it from the form
     $uname = $request["uname"];
     $pword = $request["pword"];
 
-    //echo $request["message"];
-
-    $servername = "localhost"; //set the servername
-    $username = "bob"; //set the server username
-    $password = "password"; // set the server password (you must put password here if your using live server)
-    $dbname = "spw"; // set the table name
 
     $mysqli = new mysqli($servername, $username, $password, $dbname);
 

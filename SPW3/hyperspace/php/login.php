@@ -1,12 +1,18 @@
 <?php
+
+if (!isset($_SESSION))
+{
+  session_start();
+}
+
+    include('config.php');
+
     $request = $_REQUEST; //a PHP Super Global variable which used to collect data after submitting it from the form
 
-    //echo $request["message"];
+    $uname = $request["uname"];
+    $pword = $request["pword"];
 
-    $servername = "localhost"; //set the servername
-    $username = "bob"; //set the server username
-    $password = "password"; // set the server password (you must put password here if your using live server)
-    $dbname = "spw"; // set the table name
+ 
 
     $mysqli = new mysqli($servername, $username, $password, $dbname);
 
@@ -15,23 +21,37 @@
       exit();
     } else{
         
+
+
+      $stmt = $mysqli->prepare("SELECT hashpassword, isadmin from users WHERE username = ?");
+
+      $stmt->bind_param("s",$uname);
         
-    // Set the INSERT SQL data
-    $sql = "SELECT * FROM test";
+      $stmt->execute();
+        
+      $result = $stmt->get_result();
+      
+      $row = $result->fetch_assoc(); // fetch data
+      
+      $returnedhash = $row["hashpassword"];
+      $isadmin = $row["isadmin"];
 
-    // Process the query so that we will save the date of birth
-    $results = $mysqli->query($sql);
+      if ($isadmin == "1"){
+        $_SESSION["isadmin"] = $isadmin;
+        }
+      if (password_verify($pword,$returnedhash)){
 
-    // Fetch Associative array
-    $row = $results->fetch_all(MYSQLI_ASSOC);
-
-    // Free result set
-    $results->free_result();
+        echo "Found Match";
+        $_SESSION["username"] = $uname;
+        
+      }else{
+        echo "no match";
+      }
 
     }
 
     
     $mysqli->close();
-    echo json_encode($row);
+    //echo json_encode($row);
 
 ?>
