@@ -2,11 +2,12 @@ function admincheck() {
 
   $.ajax({
       type: "GET",
-      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/admin.php",
+      url: "/SPW-Project/php/admin.php",
     })
     .done(function (data, textStatus, jqXHR) {
       if (data !== "admin") {
-        window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/login.html"
+
+        window.location.href = "http://localhost/SPW-Project/login.html"
       }
     })
     .fail(function (jqXHR, textStatus, errorThrown) {

@@ -6,7 +6,7 @@ function phpSignup() {
   var pword = document.getElementById("signup_4").value;
   var passSymbols = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
 
-  if (!pword.match(passSymbols)){  
+  if (!pword.match(passSymbols)) {
     alert("Password should be a minimum of 6 symbols and contain one small and one big alphabet symbol!");
     return false;
   }
@@ -14,7 +14,7 @@ function phpSignup() {
   if (uname && name && address && pword !== "") {
     $.ajax({
         type: "POST",
-        url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/hash.php",
+        url: "/SPW-Project/php/hash.php",
         data: {
           "uname": uname,
           "pword": pword,
@@ -27,7 +27,7 @@ function phpSignup() {
         if (data == "userexists") {
           alert("Username unavailable")
         } else {
-          window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/profile.html"
+          window.location.href = "http://localhost/SPW-Project/profile.html"
         }
       })
       .fail(function (jqXHR, textStatus, errorThrown) {
@@ -40,5 +40,4 @@ function phpSignup() {
     alert("Please fill in all fields");
   }
 }
-
 document.getElementById("signupbutton").addEventListener("click", phpSignup);

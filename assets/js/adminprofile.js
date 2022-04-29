@@ -2,7 +2,7 @@ function admintablebuilds() {
 
   $.ajax({
       type: "GET",
-      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/adminbuildLoad.php",
+      url: "/SPW-Project/php/adminbuildLoad.php",
     })
     .done(function (data, textStatus, jqXHR) {
       //alert("Success: " + data); 
@@ -40,13 +40,13 @@ function logoutTest() {
 
   $.ajax({
       type: "GET",
-      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/logout.php",
+      url: "/SPW-Project/php/logout.php",
 
     })
     .done(function (data, textStatus, jqXHR) {
       alert("Success: " + data);
       if (data === "sessionended") {
-        window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/login.html"
+        window.location.href = "http://localhost/SPW-Project/login.html"
       }
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
@@ -64,7 +64,7 @@ function buttonPress() {
 
   $.ajax({
       type: "POST",
-      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/deletebuild.php",
+      url: "/SPW-Project/php/deletebuild.php",
       data: {
         "buildId": buildId
       }

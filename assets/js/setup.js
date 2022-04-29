@@ -2,7 +2,7 @@ function getToken() {
 
   $.ajax({
       type: "GET",
-      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/getToken.php",
+      url: "/SPW-Project/php/getToken.php",
     })
     .done(function (data, textStatus, jqXHR) {
       //alert("Success: " + data); 
@@ -28,7 +28,7 @@ function buildersubmit() {
   if (databasetype && contactform && pcolour && scolour != "") {
     $.ajax({
         type: "POST",
-        url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/setup.php",
+        url: "/SPW-Project/php/setup.php",
         data: {
           "databasetype": databasetype,
           "contactform": contactform,
@@ -49,6 +49,7 @@ function buildersubmit() {
   } else {
     alert("Fill out all forms");
   }
+
 }
 
 document.getElementById("setupbutton").addEventListener("click", buildersubmit);

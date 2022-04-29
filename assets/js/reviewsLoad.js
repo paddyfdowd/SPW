@@ -2,7 +2,7 @@ function tableTest() {
 
   $.ajax({
       type: "GET",
-      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/reviewLoad.php",
+      url: "/SPW-Project/php/reviewLoad.php",
     })
     .done(function (data, textStatus, jqXHR) {
       //alert("Success: " + data); 

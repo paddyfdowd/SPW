@@ -5,9 +5,10 @@ function submitMessage() {
   var message = document.getElementById("message").value;
 
   if (name && email && message != "") {
+
     $.ajax({
         type: "POST",
-        url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/submitMessage.php",
+        url: "/SPW-Project/php/submitMessage.php",
         data: {
           "message": message,
           "name": name,
@@ -19,7 +20,7 @@ function submitMessage() {
           alert("Invalid email");
         } else {
           alert("Thank you for yor message");
-          window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/index.html";
+          window.location.href = "http://localhost/SPW-Project/index.html";
         }
       })
       .fail(function (jqXHR, textStatus, errorThrown) {
