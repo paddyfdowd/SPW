@@ -30,9 +30,7 @@ function tablebuilds() {
     });
 }
 
-
-function admincheck(){
-    
+function admincheck() {
   $.ajax({
       type: "GET",
       url: "/SPW-Project/php/admin.php",
@@ -51,7 +49,6 @@ function admincheck(){
 }
 
 function logoutTest() {
-
   $.ajax({
       type: "GET",
       url: "/SPW-Project/php/logout.php",
