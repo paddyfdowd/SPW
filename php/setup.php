@@ -1,7 +1,6 @@
 <?php
 
-    if (!isset($_SESSION))
-    {
+    if (!isset($_SESSION)){
         session_start();
     }
 
@@ -21,28 +20,20 @@
     if($recievedToken !== $sessionToken){
         echo "no match";
 
-    }
-    else{
-    $mysqli = new mysqli($servername, $username, $password, $dbname);
+    } else {
+        $mysqli = new mysqli($servername, $username, $password, $dbname);
 
-    if ($mysqli->connect_errno) {
-      echo "Failed to connect to MySQL: " . $mysqli->connect_error;
-      exit();
-    } else{
-        
-       /* Prepared statement, stage 1: prepare */
-        $stmt = $mysqli->prepare("INSERT INTO builder(databasetype, contactform, pcolour, scolour,username) VALUES (?, ?, ?, ?, ?)");
-
-        $stmt->bind_param("sssss", $databasetype, $contactform, $pcolour, $scolour, $uname);
-        
-        $stmt->execute();
-
-        echo "success";
-
-    } 
-
-    
+        if ($mysqli->connect_errno) {
+            echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+            exit();
+        } else {
+            /* Prepared statement, stage 1: prepare */
+            $stmt = $mysqli->prepare("INSERT INTO builder(databasetype, contactform, pcolour, scolour,username) VALUES (?, ?, ?, ?, ?)");
+            $stmt->bind_param("sssss", $databasetype, $contactform, $pcolour, $scolour, $uname);
+            $stmt->execute();
+            echo "success";
+        } 
     $mysqli->close();
-
     }
+    
 ?>

@@ -6,7 +6,6 @@ function tablebuilds() {
     })
     .done(function (data, textStatus, jqXHR) {
       //alert("Success: " + data); 
-
       var datajson = JSON.parse(data);
       var length = datajson.length;
 
@@ -30,9 +29,8 @@ function tablebuilds() {
     });
 }
 
+function admincheck() {
 
-function admincheck(){
-    
   $.ajax({
       type: "GET",
       url: "/SPW-Project/php/admin.php",

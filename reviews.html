@@ -15,12 +15,12 @@
 
 	<!-- Header -->
 	<header id="header">
-		<a href="index.html" class="title">Hyperspace</a>
+		<a href="index.html" class="title">Ink Palette | Web Design Studio 🎨</a>
 		<nav>
 			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="generic.html" class="active">Generic</a></li>
-				<li><a href="elements.html">Elements</a></li>
+				<li><a href="index.html">Home Page</a></li>
+				<li><a href="representatives.html">Our Representatives</a></li>
+				<li><a href="reviews.html">Leave a feedback</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -29,36 +29,35 @@
 	<div id="wrapper">
 
 		<!-- Main -->
-		<section id="main" class="wrapper">
+		<section id="main" class="wrapper fade-up">
 			<div class="inner">
-				<h1 class="major">Reviews</h1>
+				<h1 class="major" style="margin-bottom: 0.7em;">Customer Feedback</h1>
 				<div class="table-wrapper">
 					<table id="reviewtable">
 						<thead>
 							<tr>
-								<th>Name</th>
-								<th>Review</th>
-								<th>Score</th>
+								<th>User Name</th>
+								<th>Feedback</th>
+								<th>General Score</th>
 							</tr>
 						</thead>
 						<tbody>
-
-
 					</table>
 				</div>
-				<form method="post" action="#"></form>
+				<form method="post" action="#" style="margin: 0"></form>
 				<div class="field">
-					<label for="reviewmessage">Review</label>
-					<textarea name="reviewmessage" id="reviewmessage" rows="3"></textarea>
+					<label for="reviewmessage">Feedback Form</label>
+					<textarea placeholder="Your feedback" name="reviewmessage" id="reviewmessage" rows="3"
+						style="margin-bottom: 1em;"></textarea>
 				</div>
-				<div class="col-12">
+				<div class="col-12" style="margin-bottom: 1em;">
 					<select name="reviewscore" id="reviewscore">
 						<option value="">- Score -</option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
+						<option value="Extremely Bad">Extremely Bad (1)</option>
+						<option value="Bad">Bad (2)</option>
+						<option value="Normal">Normal (3)</option>
+						<option value="Good">Good (4)</option>
+						<option value="Excelent">Excelent (5)</option>
 					</select>
 				</div>
 				<a id="reviewsubmit" class="button">Submit</a>
@@ -72,8 +71,7 @@
 	<footer id="footer" class="wrapper alt">
 		<div class="inner">
 			<ul class="menu">
-				<li>&copy; Untitled. All rights reserved.</li>
-				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				<li>&copy; Ink Palette WebDesign Studio - 2022. All Rights Reserved.</li>
 			</ul>
 		</div>
 	</footer>
@@ -90,7 +88,7 @@
 	<script src="assets/js/profile.js"></script>
 	<script src="assets/js/reviews.js"></script>
 	<script src="assets/js/reviewsLoad.js"></script>
-  <script src="assets/js/signinCheck.js"></script>
+	<script src="assets/js/signinCheck.js"></script>
 
 </body>
 

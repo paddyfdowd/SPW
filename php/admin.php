@@ -1,19 +1,13 @@
 <?php
 
-if (!isset($_SESSION))
-{
-  session_start();
-}
-
-
+    if (!isset($_SESSION)){
+        session_start();
+    }
 
     if($_SESSION["isadmin"] == "1"){
-
         echo "admin";
-
-    }else{
+    } else {
         echo "Failure";
     }
 
- 
 ?>
