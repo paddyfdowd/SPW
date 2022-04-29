@@ -2,7 +2,7 @@ function messagestablebuild() {
 
   $.ajax({
       type: "GET",
-      url: "/SPW-Project/php/adminMessagesLoad.php",
+      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/adminMessagesLoad.php",
     })
     .done(function (data, textStatus, jqXHR) {
       //alert("Success: " + data); 
@@ -43,7 +43,7 @@ function buttonPress() {
 
   $.ajax({
       type: "POST",
-      url: "/SPW-Project/php/deleteMessage.php",
+      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/deleteMessage.php",
       data: {
         "buildId": buildId
       }
