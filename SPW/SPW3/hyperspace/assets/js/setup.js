@@ -2,7 +2,7 @@ function getToken() {
 
   $.ajax({
       type: "GET",
-      url: "/SPW-Project/php/getToken.php",
+      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/getToken.php",
     })
     .done(function (data, textStatus, jqXHR) {
       //alert("Success: " + data); 
@@ -28,7 +28,7 @@ function buildersubmit() {
   if (databasetype && contactform && pcolour && scolour != "") {
     $.ajax({
         type: "POST",
-        url: "/SPW-Project/php/setup.php",
+        url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/setup.php",
         data: {
           "databasetype": databasetype,
           "contactform": contactform,

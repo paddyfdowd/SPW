@@ -14,7 +14,7 @@ function phpSignup() {
   if (uname && name && address && pword !== "") {
     $.ajax({
         type: "POST",
-        url: "/SPW-Project/php/hash.php",
+        url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/hash.php",
         data: {
           "uname": uname,
           "pword": pword,
@@ -27,7 +27,7 @@ function phpSignup() {
         if (data == "userexists") {
           alert("Username unavailable")
         } else {
-          window.location.href = "http://localhost/SPW-Project/profile.html"
+          window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/profile.html"
         }
       })
       .fail(function (jqXHR, textStatus, errorThrown) {

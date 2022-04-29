@@ -2,12 +2,12 @@ function signincheck() {
 
   $.ajax({
       type: "GET",
-      url: "/SPW-Project/php/isSignedin.php",
+      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/isSignedin.php",
     })
     .done(function (data, textStatus, jqXHR) {
       if (data !== "signedin") {
         alert("not signed in")
-        window.location.href = "http://localhost/SPW-Project/login.html"
+        window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/login.html"
       } else {
         alert("signed in")
       }
