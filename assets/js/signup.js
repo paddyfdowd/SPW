@@ -4,6 +4,12 @@ function phpSignup() {
   var name = document.getElementById("signup_2").value;
   var address = document.getElementById("signup_3").value;
   var pword = document.getElementById("signup_4").value;
+  var passSymbols = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+
+  if (!pword.match(passSymbols)){  
+    alert("Password should be a minimum of 6 symbols and contain one small and one big alphabet symbol!");
+    return false;
+  }
 
   if (uname && name && address && pword !== "") {
     $.ajax({

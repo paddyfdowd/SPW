@@ -29,7 +29,7 @@
 	<div id="wrapper">
 
 		<!-- Main -->
-		<section id="main" class="wrapper fade-up" style="display: flex; align-items: center;">
+		<section id="main" name="signupsection" class="wrapper fade-up" style="display: flex; align-items: center;">
 			<div class="inner" style="padding-right: 1em">
 				<h1 class="major" style="margin-bottom: 0.5em;">Sign Up</h1>
 				<div class="col-6 col-12-xsmall" style="margin-bottom: 0.5em">
@@ -43,9 +43,10 @@
 					<input type="text" name="signup_address" id="signup_3" value="" placeholder="Address" />
 				</div>
 				<div class="col-6 col-12-xsmall" style="margin-bottom: 1em">
-					<input type="password" name="signup_password" id="signup_4" value="" placeholder="Password" />
+					<input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+					name="signup_password" id="signup_4" value="" placeholder="Password" />
 				</div>
-				<a id = "signupbutton" class="button" style="margin-right: 1em;">Sign Up</a>
+				<a id="signupbutton" class="button" style="margin-right: 1em;">Sign Up</a>
 				<a id="loginbutton" href="login.html" class="button">Already have an account?</a>
 			</div>
 			<div class="inner">

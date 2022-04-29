@@ -1,5 +1,6 @@
 <?php
 
+  
    /*  include('config.php');
 
     $request = $_REQUEST; //a PHP Super Global variable which used to collect data after submitting it from the form
