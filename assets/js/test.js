@@ -7,7 +7,7 @@ var message = "testString";
 function phpTest() {
   $.ajax({
       type: "POST",
-      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/test.php",
+      url: "/SPW-Project/php/test.php",
       data: {
         "message": message
       }

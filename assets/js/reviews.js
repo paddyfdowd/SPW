@@ -5,18 +5,20 @@ function submitReview() {
 
   $.ajax({
       type: "POST",
-      url: "/dashboard/SPW/SPW/SPW3/hyperspace/php/reviews.php",
+      url: "/SPW-Project/php/reviews.php",
       data: {
         "reviewbody": message,
         "score": score
       }
     })
-    .done(function (data, textStatus, jqXHR) {
-      if (data == "notsignedin") {
+
+    .done (function(data, textStatus, jqXHR) { 
+      if (data == "notsignedin"){
         alert("Sign in to post review");
-        window.location.href = "http://localhost/dashboard/SPW/SPW/SPW3/hyperspace/login.html"
+        window.location.href = "http://localhost/SPW-Project/login.html"
       }
-      alert("Success: " + data);
+      alert("Success: " + data); 
+
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
       alert("Error" + errorThrown + textStatus);

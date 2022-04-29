@@ -1,13 +1,15 @@
 <?php
 
-  if (!isset($_SESSION)){
-    session_start();
-  }
+if (!isset($_SESSION))
+{
+  session_start();
+}
 
-  $_SESSION["username"] =  "";
-  $_SESSION["isadmin"] =  "";
-  session_destroy();
+$_SESSION["username"] =  "";
+$_SESSION["isadmin"] =  "";
+session_destroy();
 
-  echo "sessionended"
+echo "sessionended"
 
+ 
 ?>
