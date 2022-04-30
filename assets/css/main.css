@@ -4095,3 +4095,13 @@ textarea.style-diff-area {
 div.style-diff-table {
 	margin: 1em 0 1em 0;
 }
+
+div i {
+	margin-left: -30px;
+    cursor: pointer;
+}
+
+div.style-diff-section {
+	display: flex; 
+	align-items: center;
+}
