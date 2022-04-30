@@ -41,7 +41,6 @@ function logoutTest() {
   $.ajax({
       type: "GET",
       url: "/SPW-Project/php/logout.php",
-
     })
     .done(function (data, textStatus, jqXHR) {
       alert("Success: " + data);
@@ -70,6 +69,7 @@ function buttonPress() {
       }
     })
     .done(function (data, textStatus, jqXHR) {
+      window.location.reload();
       alert("Success: " + data);
     })
     .fail(function (jqXHR, textStatus, errorThrown) {

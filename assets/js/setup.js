@@ -38,7 +38,8 @@ function buildersubmit() {
         }
       })
       .done(function (data, textStatus, jqXHR) {
-        alert("Success: " + data);
+        //alert("Success: " + data);
+        window.location.href='profile.html';
       })
       .fail(function (jqXHR, textStatus, errorThrown) {
         alert("Error" + errorThrown + textStatus);

@@ -50,6 +50,7 @@ function buttonPress() {
     })
     .done(function (data, textStatus, jqXHR) {
       alert("Success: " + data);
+      window.location.reload();
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
       alert("Error" + errorThrown + textStatus);

@@ -6,7 +6,6 @@ function admincheck() {
     })
     .done(function (data, textStatus, jqXHR) {
       if (data !== "admin") {
-
         window.location.href = "http://localhost/SPW-Project/login.html"
       }
     })

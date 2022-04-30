@@ -16,6 +16,7 @@ function submitReview() {
         alert("Sign in to post review");
         window.location.href = "http://localhost/SPW-Project/login.html"
       }
+      window.location.reload();
       alert("Success: " + data);
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
