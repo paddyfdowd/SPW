@@ -308,6 +308,10 @@ h1.major {
 	padding-bottom: 0.35em;
 }
 
+h1.style-diff {
+	margin-bottom: 0.7em;
+}
+
 h1.major:after {
 	background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
 	background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
@@ -925,6 +929,10 @@ hr.major {
 		padding-top: 3em;
 	}
 
+}
+
+#menu_elements {
+	padding-bottom: 30%;
 }
 
 #login_btn {
@@ -4029,4 +4037,61 @@ body.is-preload #sidebar nav ul li {
 		background-attachment: scroll;
 	}
 
+}
+
+footer.style-diff-footer {
+	margin-top: 10em;
+}
+
+th.style-diff-th {
+	padding-left: 2.9em
+}
+
+section.style-diff-section {
+	display: flex; 
+	align-items: center;
+}
+
+div.style-diff-inner {
+	padding-right: 1em;
+}
+
+div.style-diff-div {
+	margin-bottom: 0.5em;
+}
+
+div.style-diff-div-1 {
+	margin-bottom: 1em;
+}
+
+a.style-diff-a {
+	margin-right: 1em;
+}
+
+div.style-diff-div-left {
+	padding-left: 1em;
+}
+
+h1.style-diff-h1-profile {
+	margin-bottom: 0.3em;
+}
+
+a.style-diff-a-1 {
+	margin-right: 0.5em;
+}
+
+div.style-diff-flex {
+	display: flex;
+}
+
+form.style-diff-form {
+	margin: 0;
+}
+
+textarea.style-diff-area {
+	margin-bottom: 1em;
+}
+
+div.style-diff-table {
+	margin: 1em 0 1em 0;
 }
