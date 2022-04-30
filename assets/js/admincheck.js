@@ -10,7 +10,10 @@ function admincheck() {
       }
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
-      alert("Error" + errorThrown + textStatus);
+      new Toast({
+        message: 'Something went wrong. Try again!',
+        type: 'danger'
+      });
     })
     .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 

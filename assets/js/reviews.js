@@ -13,14 +13,15 @@ function submitReview() {
     })
     .done(function (data, textStatus, jqXHR) {
       if (data == "notsignedin") {
-        alert("Sign in to post review");
         window.location.href = "http://localhost/SPW-Project/login.html"
       }
       window.location.reload();
-      alert("Success: " + data);
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
-      alert("Error" + errorThrown + textStatus);
+      new Toast({
+        message: 'Something went wrong. Try again!',
+        type: 'danger'
+      });
     })
     .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 

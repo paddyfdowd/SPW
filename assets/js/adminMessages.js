@@ -5,7 +5,6 @@ function messagestablebuild() {
       url: "/SPW-Project/php/adminMessagesLoad.php",
     })
     .done(function (data, textStatus, jqXHR) {
-      //alert("Success: " + data); 
       var datajson = JSON.parse(data);
       var length = datajson.length;
 
@@ -19,7 +18,6 @@ function messagestablebuild() {
         row.insertCell(2).innerHTML = datajson[i].message;
         row.insertCell(3).innerHTML = datajson[i].time;
 
-
         var buttonCell = row.insertCell(4);
         var btn = document.createElement("BUTTON");
         btn.id = datajson[i].id;
@@ -29,7 +27,10 @@ function messagestablebuild() {
       }
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
-      alert("Error" + errorThrown + textStatus);
+      new Toast({
+        message: 'Something went wrong. Try again!',
+        type: 'danger'
+      });
     })
     .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 
@@ -39,7 +40,6 @@ function messagestablebuild() {
 function buttonPress() {
 
   var buildId = event.srcElement.id;
-  //alert(buildId);
 
   $.ajax({
       type: "POST",
@@ -49,11 +49,13 @@ function buttonPress() {
       }
     })
     .done(function (data, textStatus, jqXHR) {
-      alert("Success: " + data);
       window.location.reload();
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
-      alert("Error" + errorThrown + textStatus);
+      new Toast({
+        message: 'Something went wrong. Try again!',
+        type: 'danger'
+      });
     })
     .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 

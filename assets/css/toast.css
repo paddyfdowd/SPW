@@ -10,7 +10,7 @@
 	transform: translateX(-150%);
 	transition: transform 1s;
 
-	z-index: 100;
+	z-index: 10001;
 }
 
 .toastjs-container[aria-hidden="false"] {

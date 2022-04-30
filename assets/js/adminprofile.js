@@ -5,7 +5,6 @@ function admintablebuilds() {
       url: "/SPW-Project/php/adminbuildLoad.php",
     })
     .done(function (data, textStatus, jqXHR) {
-      //alert("Success: " + data); 
       var datajson = JSON.parse(data);
       var length = datajson.length;
 
@@ -29,7 +28,10 @@ function admintablebuilds() {
       }
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
-      alert("Error" + errorThrown + textStatus);
+      new Toast({
+        message: 'Something went wrong. Try again!',
+        type: 'danger'
+      });
     })
     .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 
@@ -43,13 +45,15 @@ function logoutTest() {
       url: "/SPW-Project/php/logout.php",
     })
     .done(function (data, textStatus, jqXHR) {
-      alert("Success: " + data);
       if (data === "sessionended") {
         window.location.href = "http://localhost/SPW-Project/login.html"
       }
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
-      alert("Error" + errorThrown + textStatus);
+      new Toast({
+        message: 'Something went wrong. Try again!',
+        type: 'danger'
+      });
     })
     .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 
@@ -59,7 +63,6 @@ function logoutTest() {
 function buttonPress() {
 
   var buildId = event.srcElement.id;
-  alert(buildId);
 
   $.ajax({
       type: "POST",
@@ -70,10 +73,12 @@ function buttonPress() {
     })
     .done(function (data, textStatus, jqXHR) {
       window.location.reload();
-      alert("Success: " + data);
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
-      alert("Error" + errorThrown + textStatus);
+      new Toast({
+        message: 'Something went wrong. Try again!',
+        type: 'danger'
+      });
     })
     .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 

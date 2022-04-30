@@ -9,7 +9,6 @@
   $email = $request["email"];
 
   if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-    echo "valid";
     
     $message = htmlspecialchars($message);
     $name = htmlspecialchars($name);
@@ -18,7 +17,6 @@
     $mysqli = new mysqli($servername, $username, $password, $dbname);
 
     if ($mysqli->connect_errno){
-      echo "Failed to connect to MySQL: " . $mysqli->connect_error;
       exit();
     } else {
         $stmt = $mysqli->prepare("INSERT INTO messages(name, email, message) VALUES (?, ?, ?)");

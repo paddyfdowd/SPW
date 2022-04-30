@@ -6,18 +6,15 @@ document.getElementById("getcookie").addEventListener("click", function () {
 });
 
 function setCookie(cname, cvalue, exseconds) {
-    alert(cname + cvalue + exseconds)
     const d = new Date();
     d.setTime(d.getTime() + (exseconds * 1000));
     let expires = "expires=" + d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-    alert(expires);
 }
 
 function getCookie(cname) {
 
     var allcookies = document.cookie;
-    alert(allcookies)
 
     /* // Get all the cookies pairs in an array
        cookiearray = allcookies.split(';');

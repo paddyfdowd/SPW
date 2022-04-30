@@ -5,7 +5,6 @@ function tableTest() {
       url: "/SPW-Project/php/reviewLoad.php",
     })
     .done(function (data, textStatus, jqXHR) {
-      //alert("Success: " + data); 
       var datajson = JSON.parse(data);
       var length = datajson.length;
 
@@ -20,7 +19,10 @@ function tableTest() {
       }
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
-      alert("Error" + errorThrown + textStatus);
+      new Toast({
+        message: 'Something went wrong. Try again!',
+        type: 'danger'
+      });
     })
     .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 

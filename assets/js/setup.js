@@ -5,12 +5,14 @@ function getToken() {
       url: "/SPW-Project/php/getToken.php",
     })
     .done(function (data, textStatus, jqXHR) {
-      //alert("Success: " + data); 
       var tokenElement = document.getElementById("token")
       tokenElement.value = data;
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
-      alert("Error" + errorThrown + textStatus);
+      new Toast({
+        message: 'Something went wrong. Try again!',
+        type: 'danger'
+      });
     })
     .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 
@@ -38,17 +40,22 @@ function buildersubmit() {
         }
       })
       .done(function (data, textStatus, jqXHR) {
-        //alert("Success: " + data);
         window.location.href='profile.html';
       })
       .fail(function (jqXHR, textStatus, errorThrown) {
-        alert("Error" + errorThrown + textStatus);
+        new Toast({
+          message: 'Something went wrong. Try again!',
+          type: 'danger'
+        });
       })
       .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
         //alert("complete"); 
       });
   } else {
-    alert("Fill out all forms");
+    new Toast({
+      message: 'Some of the fields are empty. Try again!',
+      type: 'warning'
+    });
   }
 
 }

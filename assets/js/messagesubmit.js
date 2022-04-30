@@ -17,20 +17,28 @@ function submitMessage() {
       })
       .done(function (data, textStatus, jqXHR) {
         if (data == "invalid") {
-          alert("Invalid email");
+          new Toast({
+            message: 'Please type a valid e-mail address!',
+            type: 'warning'
+          });
         } else {
-          alert("Thank you for yor message");
           window.location.href = "http://localhost/SPW-Project/index.html";
         }
       })
       .fail(function (jqXHR, textStatus, errorThrown) {
-        alert("Error" + errorThrown + textStatus);
+        new Toast({
+          message: 'Something went wrong. Try again!',
+          type: 'danger'
+        });
       })
       .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
         //alert("complete"); 
       });
   } else {
-    alert("Enter all fields please")
+    new Toast({
+      message: 'Some of the fields are empty. Try again!',
+      type: 'warning'
+    });
   }
 }
 

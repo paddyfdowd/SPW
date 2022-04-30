@@ -6,14 +6,14 @@ function signincheck() {
     })
     .done(function (data, textStatus, jqXHR) {
       if (data !== "signedin") {
-        alert("not signed in")
         window.location.href = "http://localhost/SPW-Project/login.html"
-      } else {
-        alert("signed in")
       }
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
-      alert("Error" + errorThrown + textStatus);
+      new Toast({
+        message: 'Something went wrong. Try again!',
+        type: 'danger'
+      });
     })
     .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 
