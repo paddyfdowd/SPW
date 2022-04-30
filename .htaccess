@@ -1,2 +1,3 @@
 RewriteEngine On
 ErrorDocument 404 http://localhost/SPW-Project/404.html
+Header add Content-Security-Policy "default-src 'self';"
