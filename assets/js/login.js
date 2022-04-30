@@ -10,7 +10,10 @@ function logincheck() {
       }
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
-      alert("Error" + errorThrown + textStatus);
+      new Toast({
+        message: 'Something went wrong. Try again!',
+        type: 'danger'
+      });
     })
     .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
       //alert("complete"); 
@@ -30,22 +33,31 @@ function login() {
           "uname": uname,
           "pword": pword
         }
-
       })
       .done(function (data, textStatus, jqXHR) {
-        alert("Success: " + data);
-        if (data === "Found Match") {
+        if (data == "no match") {
+          new Toast({
+            message: 'Wrong username or password. Try again!',
+            type: 'danger'
+          });
+        } else {
           window.location.href = "http://localhost/SPW-Project/profile.html"
         }
       })
       .fail(function (jqXHR, textStatus, errorThrown) {
-        alert("Error" + errorThrown + textStatus);
+        new Toast({
+          message: 'Something went wrong. Try again!',
+          type: 'danger'
+        });
       })
       .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
         //alert("complete"); 
       });
   } else {
-    alert("Please Enter username and password");
+    new Toast({
+      message: 'Some of the fields are empty. Try again!',
+      type: 'warning'
+    });
   }
 
 }

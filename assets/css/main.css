@@ -1959,7 +1959,7 @@ button,
 	border: solid 1px !important;
 	border-color: rgba(255, 255, 255, 0.15) !important;
 	border-radius: 3em;
-	color: #ffffff !important;
+	color: #ffffff;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 0.6em;
@@ -4048,7 +4048,7 @@ th.style-diff-th {
 }
 
 section.style-diff-section {
-	display: flex; 
+	display: flex;
 	align-items: center;
 }
 
@@ -4098,10 +4098,10 @@ div.style-diff-table {
 
 div i {
 	margin-left: -30px;
-    cursor: pointer;
+	cursor: pointer;
 }
 
 div.style-diff-section {
-	display: flex; 
+	display: flex;
 	align-items: center;
 }

@@ -7,7 +7,10 @@ function phpSignup() {
   var passSymbols = /^.{8,64}$/;
 
   if (!pword.match(passSymbols)) {
-    alert("Password should be a minimum of 8 symbols and a maximum of 64 symbols!");
+    new Toast({
+      message: 'Password should be a minimum of 8 symbols and a maximum of 64 symbols!',
+      type: 'warning'
+    });
     return false;
   }
 
@@ -23,21 +26,29 @@ function phpSignup() {
         }
       })
       .done(function (data, textStatus, jqXHR) {
-        alert("Success: " + data);
         if (data == "userexists") {
-          alert("Username unavailable")
+          new Toast({
+            message: 'Please select another username to proceed!',
+            type: 'warning'
+          });
         } else {
           window.location.href = "http://localhost/SPW-Project/profile.html"
         }
       })
       .fail(function (jqXHR, textStatus, errorThrown) {
-        alert("Error" + errorThrown + textStatus);
+        new Toast({
+          message: 'Something went wrong. Try again!',
+          type: 'danger'
+        });
       })
       .always(function (jqXHROrData, textStatus, jqXHROrErrorThrown) {
         //alert("complete"); 
       });
   } else {
-    alert("Please fill in all fields");
+    new Toast({
+      message: 'Some of the fields are empty. Try again!',
+      type: 'warning'
+    });
   }
 }
 document.getElementById("signupbutton").addEventListener("click", phpSignup);

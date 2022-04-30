@@ -14,7 +14,6 @@
   $mysqli = new mysqli($servername, $username, $password, $dbname);
 
   if ($mysqli->connect_errno){
-    echo "Failed to connect to MySQL: " . $mysqli->connect_error;
     exit();
   } else {
       $stmt = $mysqli->prepare("SELECT hashpassword, isadmin from users WHERE username = ?");
