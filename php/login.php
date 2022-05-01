@@ -11,6 +11,25 @@
   $uname = $request["uname"];
   $pword = $request["pword"];
   
+  $recaptcha = $request["response"];
+
+    $secret = "6LeV47UfAAAAAM914yAcZsIiWfNDmEje3zzKMbc0";
+    $ip = $_SERVER['REMOTE_ADDR'];
+  
+    $postvars = array("secret"=>$secret, "response"=>$recaptcha, "remoteip"=>$ip);
+    $url = "https://www.google.com/recaptcha/api/siteverify";
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
+    $resp = json_decode(curl_exec($ch));
+    curl_close($ch);
+  
+    
+    if ($resp->success) {
+
+
   $mysqli = new mysqli($servername, $username, $password, $dbname);
 
   if ($mysqli->connect_errno){
@@ -42,5 +61,8 @@
     }
   $mysqli->close();
     //echo json_encode($row);
+  }else{
 
+    echo "Captcha Fail";
+  }
 ?>

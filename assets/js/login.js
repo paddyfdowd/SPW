@@ -24,14 +24,17 @@ function login() {
 
   var uname = document.getElementById("login_1").value;
   var pword = document.getElementById("login_2").value;
+  var response = grecaptcha.getResponse();
 
-  if (uname && pword !== "") {
+  
+  if (uname && response && pword !== "") {
     $.ajax({
         type: "POST",
         url: "/SPW-Project/php/login.php",
         data: {
           "uname": uname,
-          "pword": pword
+          "pword": pword,
+          "response" : response
         }
       })
       .done(function (data, textStatus, jqXHR) {
