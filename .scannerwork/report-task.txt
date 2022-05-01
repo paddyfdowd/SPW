@@ -1,0 +1,6 @@
+projectKey=SPW-Project
+serverUrl=http://localhost:9000
+serverVersion=9.4.0.54424
+dashboardUrl=http://localhost:9000/dashboard?id=SPW-Project
+ceTaskId=AYB9TaLwi-1XuXXUBgy6
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYB9TaLwi-1XuXXUBgy6
