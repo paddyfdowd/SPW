@@ -7,6 +7,8 @@ function logincheck() {
     .done(function (data, textStatus, jqXHR) {
       if (data === "loggedin") {
         window.location.href = "http://localhost/SPW-Project/profile.html"
+      } else if (data ==- "error") {
+        alert("SUKA");
       }
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
